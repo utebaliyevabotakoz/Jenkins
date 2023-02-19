@@ -31,8 +31,10 @@ dependencies {
             "com.codeborne:selenide:6.9.0",
             "io.qameta.allure:allure-selenide:2.19.0",
             "org.junit.jupiter:junit-jupiter:5.9.1",
+            'org.aeonbits.owner:owner:1.0.4',
             "org.slf4j:slf4j-simple:1.7.32"
     )
+    testImplementation 'junit:junit:4.13.1'
 }
 
 tasks.withType(Test) {
@@ -56,6 +58,12 @@ task simple_tests(type: Test) {
 task smoke_tests(type: Test) {
     useJUnitPlatform {
         includeTags("smoke")
+    }
+}
+
+task owner_tests(type: Test) {
+    useJUnitPlatform {
+        includeTags("owner")
     }
 }
 
