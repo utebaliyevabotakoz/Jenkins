@@ -1,7 +1,7 @@
 package tests.owner;
 
 import config.WebDriverProvider;
-import org.junit.Before;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
@@ -9,12 +9,11 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class OwnerLibrary {
 
-    @Before
-    static void before() {
+    @BeforeAll
+    static void beforeAll() {
         WebDriverProvider.config();
       }
 
